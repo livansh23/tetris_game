@@ -1,0 +1,25 @@
+This file provides all the necessary information to run the tetris game and how it is implemented. This project was implemented using OOP cocepts with the help of "Programming with Nick" youtube channel.
+
+ 
+
+There are 7 python files and a Sounds folder containing the sounds used and an image named "tetris.jpeg". This image is used as icon. The sounds used are available for free made by Spyros.
+
+The 7 python files are:
+
+main.py: The main.py file needs to be run in order to run the game. It is important to note that the pygame library needs to be installed in order to run the game. This file handles the game loop using pygame logics and the drawing, the screens, rendering blocks and texts and checking if game is over.
+
+block.py: This file handles all logics and implementation done to manipulate the block. There is a seperate blocks.py file which has the data for the tetriminos block used. It draws, moves, and rotates the block in the screen.
+
+blocks.py: Contains all the position of all the blocks and its rotational state. It is stored in form of a python dictionary. All the blocks are seperate classes and inherit the Block class. Id is the id number given to a block. self.move is used to drop the block from middle.
+
+colors.py: This python file stores the colors used for tetriminos and the background in form of a tuple and a decorator is also used to call a method on eitire class rather than one instance of class. 
+
+game.py: This python files is made to make the code neat and readable. This file has code that handles all the logics such as moving the tetriminos, drawing the tetriminos, keeping the score and checking the blocks. This file imports code from other files so the main.py file is neat and readable.  
+
+grid.py: This file handles all the grid realted logics such as printing the grid checking if tetriminos are inside and empty and drawing (used in game class from this class). If rows are full and clearing them, moving the rows down and reseting the grid. 
+
+position.py: This file contains the class to initialize the positions of the tetriminos
+
+
+
+This is my first python project learning how to develop so it is not perfect as this is the starting of me doing a project 
