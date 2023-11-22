@@ -1,10 +1,15 @@
 import pygame, sys
 from game import Game
 from colors import Colors
+import requests
+from io import BytesIO
 
 
 pygame.init() # Initialization 
 
+img_url = "https://as1.ftcdn.net/v2/jpg/02/44/66/64/1000_F_244666489_NV7K6OK24CZsNLxCgWUHpGdPuukN3YIH.jpg"
+response = requests.get(img_url)
+img_data = BytesIO(response.content)
 
 
 title_font = pygame.font.Font(None, 41)
@@ -29,7 +34,7 @@ screen = pygame.display.set_mode((500, 620)) # This line sets the main window of
 pygame.display.set_caption("Tetris") # This sets the title of the game; In tetris case only "Tetris" will be used
 
 # Adding icon of the game 
-icon = pygame.image.load("/home/livvv/Desktop/game/tetris.jpeg")
+icon = pygame.image.load(img_data)
 pygame.display.set_icon(icon)
 
 
@@ -42,13 +47,13 @@ GAME_UPDATE = pygame.USEREVENT + 1   #This line sets up custom event so the Tetr
 if game.score < 500:
     pygame.time.set_timer(GAME_UPDATE, 200) #Creating a timer that will create the GAME_UPDATE function every 200 ms 
 elif game.score > 500 and game.score < 999:
-    pygame.time.set_timer(GAME_UPDATE, 350)
-elif game.score > 1000 and game.score < 1999:
-    pygame.time.set_timer(GAME_UPDATE, 500)
-elif game.score > 2000 and game.score < 4999:
     pygame.time.set_timer(GAME_UPDATE, 700)
-else:
+elif game.score > 1000 and game.score < 1999:
     pygame.time.set_timer(GAME_UPDATE, 1000)
+elif game.score > 2000 and game.score < 4999:
+    pygame.time.set_timer(GAME_UPDATE, 1300)
+else:
+    pygame.time.set_timer(GAME_UPDATE, 1600)
   
 game_over_update = pygame.USEREVENT + 2
 pygame.time.set_timer(game_over_update, 1000)

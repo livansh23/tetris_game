@@ -13,10 +13,10 @@ class Game:
         self.current_block, self.next_block = self.get_random_block(), self.get_random_block() #Randomly choosing blocks using random lib
         self.game_over = False
         self.score = 0
-        self.rotate_sound = pygame.mixer.Sound("/home/livvv/Desktop/game/Sounds/rotate.ogg")
-        self.clear_sound = pygame.mixer.Sound("/home/livvv/Desktop/game/Sounds/clear.ogg")
+        self.rotate_sound = pygame.mixer.Sound("/home/livvv/Desktop/coding playground/tetris-game/Sounds/rotate.ogg")
+        self.clear_sound = pygame.mixer.Sound("/home/livvv/Desktop/coding playground/tetris-game/Sounds/clear.ogg")
 
-        pygame.mixer.music.load("/home/livvv/Desktop/game/Sounds/music.ogg")
+        pygame.mixer.music.load("/home/livvv/Desktop/coding playground/tetris-game/Sounds/music.ogg")
         pygame.mixer.music.play(-1)
 
     def update_score(self, lines_cleared, move_down_points):
